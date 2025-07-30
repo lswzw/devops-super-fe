@@ -4,9 +4,58 @@
 @import "./dark";
 
 /* 自定义全局 CssVar */
-:root {
-  /* 左侧菜单展开、收起动画时长 */
-  --pure-transition-duration: 0.3s;
+:root {}
+
+/* 移除 Element Plus 菜单展开动画 */
+.el-sub-menu__title,
+.el-menu-item {
+  transition: none !important;
+}
+
+.el-menu--collapse .el-sub-menu.is-active .el-sub-menu__title {
+  transition: none !important;
+}
+
+.el-menu--vertical .el-menu--popup {
+  transition: none !important;
+}
+
+.el-collapse-transition-enter-active,
+.el-collapse-transition-leave-active {
+  transition: none !important;
+}
+
+.el-collapse-transition-enter-from,
+.el-collapse-transition-leave-to {
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+.el-sub-menu {
+  .el-menu {
+    transition: none !important;
+  }
+
+  .el-sub-menu__title {
+    transition: none !important;
+  }
+
+  .el-menu-item {
+    transition: none !important;
+  }
+}
+
+.el-menu-vertical-collapse-transition {
+  transition: none !important;
+}
+
+.el-menu-vertical-enter-active,
+.el-menu-vertical-leave-active {
+  transition: none !important;
+}
+
+.el-sub-menu__hide-arrow {
+  transition: none !important;
 }
 
 /* 灰色模式 */

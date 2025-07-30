@@ -102,13 +102,7 @@ const getSubMenuDivStyle = computed((): any => {
 });
 
 const expandCloseIcon = computed(() => {
-  if (!getConfig()?.MenuArrowIconNoTransition) return "";
-  return {
-    "expand-close-icon": useRenderIcon(EpArrowDown),
-    "expand-open-icon": useRenderIcon(ArrowUp),
-    "collapse-close-icon": useRenderIcon(ArrowRight),
-    "collapse-open-icon": useRenderIcon(ArrowLeft)
-  };
+  return {};
 });
 
 const onlyOneChild: menuType = ref(null);
@@ -259,6 +253,7 @@ function resolvePath(routePath) {
     ref="subMenu"
     v-bind="expandCloseIcon"
     :index="resolvePath(props.item.path)"
+    :collapse-transition="false"
   >
     <template #title>
       <div
